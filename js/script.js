@@ -159,12 +159,12 @@ checkoutBtn.addEventListener('click', function() {
   //Enviar o pedido para API do Whatsapp
   const cartItems = cart.map((item) => {
     return (
-      `${item.name} Quantidade: (${item.quantity}) Preço: R$ ${item.price} |`
+      ` ${item.name} Quantidade: (${item.quantity}) Preço: R$ ${item.price} |`
     )
-  }).join('')
+  }).join("")
 
   const message = encodeURIComponent(cartItems)
-  const phone = '38999651383'
+  const phone = '12345678901'
 
   window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
   
@@ -175,7 +175,7 @@ checkoutBtn.addEventListener('click', function() {
 //Verificar a hora e manipular o card do horário
 function checkOpen() {
   const data = new Date()
-  const hora = getHours()
+  const hora = data.getHours()
   return hora >= 18 && hora <= 22 //true = restaurante aberto
 }
 
